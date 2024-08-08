@@ -1,0 +1,24 @@
+#joguinho simples para acertar o número
+import random
+
+def adivinhe_o_numero():
+    numero_secreto = random.randint(0, 10)
+    tentativa = None
+    
+    print("Tente adivinhar meu número")
+    print("Pensei em um número inteiro de 0 a 10")
+
+    # Enquanto o número for diferente do pensado
+    while tentativa != numero_secreto:
+        tentativa = int(input("Qual seu palpite? "))
+        
+        # Fornecer dicas para o usuário
+        if tentativa < numero_secreto:
+            print("O número é maior!")
+        elif tentativa > numero_secreto:
+            print("O número é menor!")
+        # Caso ele acerte
+        else:
+            print(f"Exato! O número é {numero_secreto}")
+
+adivinhe_o_numero()
